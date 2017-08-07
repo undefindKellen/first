@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .nav{
+            width: 600px;
+            height: 50px;
+            margin: auto;
+        }
+        .nav .list{
+            width: 120px;
+            height: 50px;
+            background: red;
+            float: left;
+            line-height: 50px;
+            text-align: center;
+            margin-right: 2px;
+            color: white;
+        }
+        .nav .list li{
+            background: blue;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="list">
+        <span>首页</span>
+        <ul>
+            <li class="li">点点滴滴</li>
+            <li class="li">点点滴滴</li>
+            <li class="li">点点滴滴</li>
+            <li class="li">点点滴滴</li>
+        </ul>
+    </div>
+    <div class="list">
+        <span>首页</span>
+        <ul>
+            <li class="li">点点滴滴</li>
+            <li class="li">点点滴滴</li>
+            <li class="li">点点滴滴</li>
+            <li class="li">点点滴滴</li>
+        </ul>
+    </div>
+    <div class="list">
+        <span>首页</span>
+        <ul>
+            <li class="li">点点滴滴</li>
+            <li class="li">点点滴滴</li>
+            <li class="li">点点滴滴</li>
+            <li class="li">点点滴滴</li>
+        </ul>
+    </div>
+    <div class="list">
+        <span>首页</span>
+        <ul>
+            <li class="li">点点滴滴</li>
+            <li class="li">点点滴滴</li>
+            <li class="li">点点滴滴</li>
+            <li class="li">点点滴滴</li>
+        </ul>
+    </div>
+
+
+</div>
+
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script>
+    $(".list").hover(function () {
+        $(this).find(".li").stop().slideToggle(300)
+    })
+
+
+</script>
+</body>
+</html>

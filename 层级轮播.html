@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 640px;
+            height: 250px;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        li{
+            list-style: none;
+        }
+        .box ul{
+            position: relative;
+            z-index: 3;
+        }
+        .box ul li{
+            position: absolute;
+            width: 640px;
+            top: 0;
+            left: 0;
+        }
+        .box ol{
+            position: absolute;
+            z-index: 4;
+            bottom: 10px;
+            left: 50%;
+             margin-left: -70px;
+        }
+        .box ol li{
+            float: left;
+            width: 25px;
+            height: 25px;
+            background: #76cccb;
+            line-height: 25px;
+            text-align: center;
+            border: 1px solid #cccccc;
+        }
+        .box ol li+li{
+            margin-left: 10px;
+        }
+        .cur{
+            border: 1px solid #000000;
+            background: #0e0d29;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li><img src="img/01.jpg"></li>
+        <li><img src="img/02.jpg"></li>
+        <li><img src="img/03.jpg"></li>
+        <li><img src="img/04.jpg"></li>
+        <li><img src="img/05.jpg"></li>
+    </ul>
+   <!-- <ol>
+        <li class="cur">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ol>-->
+</div>
+</body>
+</html>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script>
+   $(function () {
+       var oUl=$(".box ul"),aLi=$(".box ul li");
+       oUl.after('<ol></ol>');
+       var oL=$(".box ol"),z=1;
+   })
+</script>

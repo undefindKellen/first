@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 400px;
+            margin: auto;
+            border: 1px solid #cccccc;
+        }
+        .box ul{
+            width: 100%;
+            height: 50px;
+            background: #a6bdcc;
+        }
+        .box ul li{
+            width: 100px;
+            height: 50px;
+            float: left;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .cur{
+            background: #fbfffd;
+        }
+        .content div{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li class="cur">公告</li>
+        <li>公告</li>
+        <li>公告</li>
+        <li>公告</li>
+    </ul>
+    <div class="content">
+    <div style="display: block">111111111111</div>
+    <div>22222222222222222</div>
+    <div>333333333333333333</div>
+    <div>44444444444444444444</div>
+    </div>
+</div>
+</body>
+</html>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script>
+    $("ul li").click(function () {
+        $(this).addClass("cur").siblings().removeClass("cur")
+        //console.log($(this).index())
+        var index=$(this).index();
+        $(".content div").hide();
+        $(".content div").eq(index).show()
+
+    })
+
+
+
+</script>

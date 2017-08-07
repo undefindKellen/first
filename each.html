@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script>
+    $("ul li").each(function (index,ele) {
+        $("ul li").eq(index%2).css("background","red");
+    })
+
+
+
+</script>
+</body>
+</html>

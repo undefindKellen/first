@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 790px;
+            height: 340px;
+            margin: 100px auto;
+
+            position: relative;
+        }
+        .box ul{
+            z-index: 2;
+        }
+        .box ul li{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        .box ol{
+           padding: 5px 10px;
+            border-radius: 20px;
+            z-index: 3;
+            background:rgba(250,250,250,0.3);
+            position: absolute;
+            bottom: 10px;
+            left: 40%;
+        }
+        .box ol li{
+            width: 20px;
+            height: 20px;
+            float: left;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+        .box ol li+li{
+            margin-left: 5px;
+        }
+        .box ol li.cur{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li><img src="imgs/01.jpg"></li>
+        <li><img src="imgs/02.jpg"></li>
+        <li><img src="imgs/03.jpg"></li>
+        <li><img src="imgs/04.png"></li>
+        <li><img src="imgs/05.jpg"></li>
+    </ul>
+    <ol>
+        <li class="cur"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</div>
+
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script>
+     $aLi=$(".box ul li");
+     $
+
+
+
+
+</script>
+</body>
+</html>

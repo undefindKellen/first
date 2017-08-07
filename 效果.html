@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 300px;
+            background: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="show">
+<input type="button" value="hide">
+<input type="button" value="slideDown">
+<input type="button" value="slideUp">
+<input type="button" value="slideToggle">
+<input type="button" value="fadeIn">
+<input type="button" value="fadeOut">
+<div class="box"></div>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script>
+    $("input").eq(0).click(function () {
+        $(".box").show(3000)
+    })
+    $("input").eq(1).click(function () {
+        $(".box").hide(3000)
+    })
+    $("input").eq(2).click(function () {
+        $(".box").slideDown(3000)
+    })
+    $("input").eq(3).click(function () {
+        $(".box").slideUp(300)
+    })
+    $("input").eq(4).click(function () {
+        $(".box").slideToggle(300)
+    })
+    $("input").eq(5).click(function () {
+        $(".box").fadeIn(3000)
+    })
+    $("input").eq(6).click(function () {
+        $(".box").fadeOut(3000)
+    })
+
+</script>
+</body>
+</html>
