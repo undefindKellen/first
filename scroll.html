@@ -13,7 +13,9 @@
         .fixed{
             position: fixed;
             top: 0;
-            left: 0;
+            left: calc(50% - 400px);
+
+
         }
     </style>
     <script src="node_modules/jquery/dist/jquery.js"></script>
@@ -23,7 +25,11 @@
             var $navTop=$navBar.offset().top;
             $(window).scroll(function () {
                 var H=$(document).scrollTop();
-
+                if(H >= $navTop){
+                    $navBar.attr("class","fixed")
+                }else{
+                    $navBar.removeAttr("class","fixed")
+                }
             })
         })
     </script>

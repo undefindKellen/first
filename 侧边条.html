@@ -9,56 +9,112 @@
             padding: 0;
             list-style: none;
         }
-        .box{
-           position: relative;
+        .content{
             width: 800px;
-            margin: 10px auto;
-
-        }
-        ul li{
-            width: 90%;
-            height: 800px;
-            background: red;
-
-            margin-bottom: 10px;
-        }
-        ol{
-            width: 30px;
-            height: 110px;
             margin: auto;
-            position: absolute;
-            right: 0;
-            top: 0;
+            text-align: center;
         }
-        ol li{
+        .content li{
+            margin-top: 5px;
+        }
+        .content li div{
+            width: 100%;
+            height: 600px;
+            background: #cccccc;
+        }
+        .nav{
+            width: 30px;
+
+            position: fixed;
+            top: 50%;
+            right: 0;
+        }
+        .nav li{
+            width: 100%;
+            height: 30px;
+            background: #cccccc;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .nav li+li{
+            margin-top: 5px;
+        }
+        .back{
             width: 30px;
             height: 30px;
-            margin-bottom: 10px;
-            background: black;
-        }
-        span{
-            width: 30px;
-            height: 30px;
-            background: blue;
-            position: absolute;
-            top: 130px;
+            line-height: 30px;
+            background: #cccccc;
+            font-size: 10px;
+            text-align: center;
+            position: fixed;
             right: 0;
+            bottom: 100px;
+        }
+        .nav .cur{
+            background: #6f787c;
         }
     </style>
 </head>
 <body>
-<div class="box">
-<ul>
-    <li></li>
-    <li></li>
-    <li></li>
+
+<ul class="content">
+    <li>
+        <h4>一楼</h4>
+        <div>内容</div>
+    </li>
+    <li>
+        <h4>2楼</h4>
+        <div>内容</div>
+    </li>
+    <li>
+        <h4>3楼</h4>
+        <div>内容</div>
+    </li>
 </ul>
-<ol>
-    <li></li>
-    <li></li>
-    <li></li>
+<ol class="nav">
+    <li class="cur">1</li>
+    <li>2</li>
+    <li>3</li>
+
 </ol>
-<span></span>
-</div>
+<div class="back">返回</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 </body>
 </html>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script>
+    var $box=$(".content").find("li");
+    var $btn=$(".nav").find("li");
+
+
+    $(window).scroll(function () {
+       var $scrollTop=$(document).scrollTop();
+        $box.each(function (index,ele) {
+            //console.log(ele);
+            var $iTarget=$(ele).offset().top;
+            //console.log($iTarget)
+            if($scrollTop >= $iTarget){
+                $btn.eq(index).attr("class","cur").siblings().removeAttr("class","cur")
+            }
+        })
+    });
+
+    $btn.on("click",function () {
+        var $index=$(this).index();
+        //console.log($index)
+        $("body","html").animate({
+            scrollTop:$box.eq($index).offset().top
+        });
+        console.log($("body","html").scrollTop())
+    });
+    $(".back").click(function () {
+        $("body","html").animate({
+            scrollTop:$box.eq(0).offset().top
+        })
+    })
+
+
+
+</script>
